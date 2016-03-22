@@ -9,16 +9,22 @@ using System.Web.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TRex.Metadata;
+using CSVtoJSON.Models;
 
 namespace CSVtoJSON.Controllers
 {
     public class CSVtoJSONController : ApiController
     {
-        [Swashbuckle.Swagger.Annotations.SwaggerResponse(HttpStatusCode.OK, Type = typeof(JArray))]
-        [Metadata("CSV to JSON", "Convert CSV to JSON")]
+        /// <summary>
+        /// Convert CSV to JSON where the first row is headers
+        /// </summary>
+        /// <param name="csv">CSV file to convert to JSON</param>
+        /// <returns>JSON Result - the JArray of Objects generated from each row</returns>
+        [Swashbuckle.Swagger.Annotations.SwaggerResponse(HttpStatusCode.OK, Type = typeof(JsonResult))]
+        [Metadata("CSV to JSON with header row", "Convert CSV to JSON")]
         public HttpResponseMessage Post([FromBody] string csv)
         {
-            JArray jsonResult = new JArray();
+            JsonResult resultSet = new JsonResult();
             string[] csvLines = csv.Split('\r');
             var headers = csvLines[0].Split(',').ToList<string>();
             foreach(var line in csvLines.Skip(1))
@@ -29,10 +35,10 @@ namespace CSVtoJSON.Controllers
                 {
                     lineObject[headers[x]] = lineAttr[x];
                 }
-                jsonResult.Add(lineObject);
+                resultSet.rows.Add(lineObject.ToString());
             }
 
-            return Request.CreateResponse<JArray>(jsonResult);
+            return Request.CreateResponse<JsonResult>(resultSet);
         }
 
     }
