@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSVtoJSON.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -19,6 +20,9 @@ namespace CSVtoJSON
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Add a reference here to the new MediaTypeFormatter that adds text/plain support
+            GlobalConfiguration.Configuration.Formatters.Insert(0, new TextMediaTypeFormatter());
         }
     }
 }
