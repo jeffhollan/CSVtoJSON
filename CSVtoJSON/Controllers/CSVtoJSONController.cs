@@ -21,7 +21,7 @@ namespace CSVtoJSON.Controllers
         /// <param name="body">CSV file to convert to JSON</param>
         /// <returns>JSON Result - the JArray of Objects generated from each row</returns>
         [Swashbuckle.Swagger.Annotations.SwaggerResponse(HttpStatusCode.OK, Type = typeof(JsonResult))]
-        [Metadata("CSV to JSON with header row", "Convert CSV to JSON")]
+        [Metadata("CSV to JSON", "Convert CSV to JSON")]
         public HttpResponseMessage Post([FromBody] string body)
         {
             JsonResult resultSet = new JsonResult();
