@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVtoJSON", "CSVtoJSON\CSVtoJSON.csproj", "{2CDC72DD-8385-4FB1-A9CB-1B640B1E30CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVtoJSON.Tests", "CSVtoJSON.Tests\CSVtoJSON.Tests.csproj", "{2FD47337-A392-45FC-A7EE-CF402F925B70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CDC72DD-8385-4FB1-A9CB-1B640B1E30CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CDC72DD-8385-4FB1-A9CB-1B640B1E30CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CDC72DD-8385-4FB1-A9CB-1B640B1E30CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CDC72DD-8385-4FB1-A9CB-1B640B1E30CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD47337-A392-45FC-A7EE-CF402F925B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD47337-A392-45FC-A7EE-CF402F925B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD47337-A392-45FC-A7EE-CF402F925B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD47337-A392-45FC-A7EE-CF402F925B70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
