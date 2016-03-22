@@ -35,7 +35,7 @@ namespace CSVtoJSON.Controllers
                 {
                     lineObject[headers[x]] = lineAttr[x];
                 }
-                resultSet.rows.Add(lineObject.ToString());
+                resultSet.rows.Add(lineObject.ToObject<JsonResult.Sale>());
             }
 
             return Request.CreateResponse<JsonResult>(resultSet);
